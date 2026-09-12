@@ -21,7 +21,7 @@ jobs:
                 token: ${{ secrets.GITHUB_TOKEN }}
 
             - name: Sync Upstream
-              uses: aormsby/Fork-Sync-With-Upstream-action@v3.4
+              uses: aormsby/Fork-Sync-With-Upstream-action@v3.4.3
               with:
                   target_repo_token: ${{ secrets.GITHUB_TOKEN }}
                   upstream_sync_repo: huangxd-/danmu_api
