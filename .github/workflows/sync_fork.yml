@@ -2,7 +2,6 @@ name: Fork Sync
 
 permissions:
     contents: write
-    workflows: write
 
 on:
     schedule:
@@ -19,12 +18,12 @@ jobs:
             - name: Checkout target repo
               uses: actions/checkout@v5
               with:
-                token: ${{ secrets.GITHUB_TOKEN }}
+                token: ${{ secrets.REPO_PAT }}
 
             - name: Sync Upstream
               uses: aormsby/Fork-Sync-With-Upstream-action@v3.4.3
               with:
-                  target_repo_token: ${{ secrets.GITHUB_TOKEN }}
+                  target_repo_token: ${{ secrets.REPO_PAT }}
                   upstream_sync_repo: huangxd-/danmu_api
                   upstream_sync_branch: main
                   target_sync_branch: main
